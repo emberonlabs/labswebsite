@@ -184,8 +184,6 @@ nav ul li a:hover::after {
   display: none;
 }
 
-
-
 .hero_section {
   position: relative;
   width: 100%;
@@ -589,7 +587,6 @@ footer {
   color: var(--light-gray);
   margin-bottom: 1rem;
 }
-
 .social-links {
   display: flex;
   gap: 1rem;
@@ -597,7 +594,7 @@ footer {
 }
 
 .social-links a {
-  display: flex;
+  display: inline-flex; 
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -606,12 +603,23 @@ footer {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   transition: var(--transition);
+  font-size: 1rem; 
+}
+
+
+.social-links a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .social-links a:hover {
   background-color: var(--primary-color);
   transform: translateY(-3px);
 }
+
 
 .footer-section a {
   color: var(--light-gray);
