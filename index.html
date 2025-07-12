@@ -50,10 +50,10 @@
 
             <div class="slide">
                 <div class="hero_content">
-                    <h1>ACCELERATING YOUR PRODUCT CREATION CAPABILITY</h1>
-                    <p>At Avench Systems, we deliver product engineering services in embedded electronics design and
-                        system software development. And we are passionate aboout creating innovative,robust,and
-                        advanced engineering solutions for our customers worldwide.</p>
+                    <h1>CREATING EMBEDDED IOT SOFTWARE SOLUTIONS</h1>
+                    <p>We can be your trusted offshore partner for embedded software development specialized in IOT
+                        gateways, test & measurement, remote monitoring and data acquistion systems. Develop your
+                        Cutting-edge systems with our BSP,middleware and application software capabilities.</p>
                     <a href="#automation" class="btn">Read More</a>
                 </div>
             </div>
@@ -61,10 +61,10 @@
 
             <div class="slide">
                 <div class="hero_content">
-                    <h1>IoT Development Experts</h1>
-                    <p>At Avench Systems, we deliver product engineering services in embedded electronics design and
-                        system software development. And we are passionate aboout creating innovative,robust,and
-                        advanced engineering solutions for our customers worldwide.</p>
+                    <h1>BUILDING EMBEDDED HARDWARE FOR YOUR PROCESSING NEEDS</h1>
+                    <P>Your products needs computing power! Our teams can help your design MCU, MPU and FPGA based
+                        products for industrial and Consumer markets. Our design services consist of product design,
+                        validation, manufacturing, and enabling production testing.</P>
                     <a href="#iot" class="btn">Read More</a>
                 </div>
             </div>
@@ -196,7 +196,7 @@
             </div>
 
             <div class="projects-grid">
-                <!-- Project 1 -->
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -214,7 +214,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -232,7 +232,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -249,7 +249,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -266,7 +266,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5 -->
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -283,7 +283,7 @@
                     </div>
                 </div>
 
-                <!-- Project 6 -->
+
                 <div class="project-card">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -427,11 +427,6 @@
     </footer>
     <script>
 
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -439,7 +434,6 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-
 
                 if (document.getElementById('click').checked) {
                     document.getElementById('click').checked = false;
@@ -453,17 +447,31 @@
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
+
+
         document.addEventListener('DOMContentLoaded', function () {
             const slides = document.querySelectorAll('.slide');
             let currentSlide = 0;
-            const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+
+            slides[currentSlide].classList.add('active');
+
+            const slideInterval = setInterval(nextSlide, 3000);
 
             function nextSlide() {
                 slides[currentSlide].classList.remove('active');
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
             }
+
+            const slideshow = document.querySelector('.slideshow');
+            slideshow.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            slideshow.addEventListener('mouseleave', () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 3000);
+            });
         });
+
 
     </script>
 </body>
