@@ -27,7 +27,7 @@
             </label>
 
             <ul>
-                <li><a href="#">HOME</a></li>
+                <li><a href="#home">HOME</a></li>
                 <li><a href="#capabilities">SERVICES</a></li>
                 <li><a href="#workhistory">WORK HISTORY</a></li>
                 <li><a href="#contact">CONTACT US</a></li>
@@ -35,7 +35,7 @@
         </nav>
     </header>
 
-    <section class="hero_section">
+    <section id="home" class="hero_section">
         <div class="slideshow">
 
             <div class="slide active">
@@ -414,8 +414,9 @@
 
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <p><a href="#">Home</a></p>
+                <p><a href="#home">Home</a></p>
                 <p><a href="#capabilities">Services</a></p>
+                <p><a href="#workhistory">WORK HISTORY</a></p>
                 <p><a href="#contact">Contact Us</a></p>
             </div>
         </div>
@@ -425,6 +426,11 @@
         </div>
     </footer>
     <script>
+
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
